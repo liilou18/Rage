@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D body;
     private Animator animation;
 
+
     private void Awake()
     {
         //Grab references for rigidbody and animator from object
@@ -27,10 +28,15 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
        
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.UpArrow))
             body.velocity = new Vector2(body.velocity.x, speed);
 
         //Set animator parameters
         animation.SetBool("walk", horizontalInput !=0);
+     
     }
+
+
+    
+    
 }
